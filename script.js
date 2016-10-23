@@ -3,8 +3,17 @@ var hatena_bookmark = {
    * はじめに実行する処理
    */
   init: function() {
+    this.clearResults();
     this.initOption();
     this.getTitle(this.option.url);
+  },
+  /**
+   * 現在表示されている結果を消去する。
+   */
+  clearResults: function() {
+    $('#result-html').val('');
+    $('#result-markdown').val('');
+    $('#result-demo').html('');
   },
   /**
    * オプションを設定する。
