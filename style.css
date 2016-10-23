@@ -45,6 +45,8 @@ footer {
   color: #fff;
   padding: 1em 0;
 }
-footer a {
-  color: #fff;
+footer a,
+footer a:hover,
+footer a:focus {
+  color: inherit;
 }
