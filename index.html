@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>はてなブックマーク数表示付きリンクを取得する</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1 class="page-title">はてなブックマーク数表示付きリンクを取得する</h1>
+  </div>
+</header>
+<main role="main">
+  <div class="container">
+    <div class="input-container">
+      <p>リンクを取得したいページのURLを入力してください。</p>
+      <p><input id="hb-url" class="main-io" type="url" value="http://b.hatena.ne.jp/"></p>
+      <div class="input-option">
+        <h4>オプション</h4>
+        <ul>
+          <li>
+            <input id="hb-opt-blank" type="checkbox" checked="checked">
+            <label for="hb-opt-blank">
+              リンクを新しいタブで開く (<code>target="_blank"</code>を付与。HTML形式のみ有効)
+            </label>
+          </li>
+          <li>
+            <input id="hb-opt-users" type="checkbox" checked="checked">
+            <label for="hb-opt-users">
+              はてなブックマーク数を表示する
+            </label>
+          </li>
+          <li>
+            <label for="hb-opt-alt">はてなブックマーク数表示の画像のalt属性</label><br>
+            <input id="hb-opt-alt" type="text" size="40" value="hatena bookmark">
+          </li>
+        </ul>
+      </div>
+      <p><button class="btn btn-primary hb-execute">リンクを取得する</button></p>
+    </div>
+    <div class="result-container">
+      <h2>結果表示</h2>
+      <p>
+        下記に出力されるソースコードをブログやウェブページで利用してください。
+      </p>
+      <div>
+        <h3>HTML形式</h3>
+        <textarea id="result-html" class="main-io" rows="5"></textarea>
+      </div>
+      <div>
+        <h3>Markdown形式</h3>
+        <textarea id="result-markdown" class="main-io" rows="5"></textarea>
+      </div>
+      <div>
+        <h3>実際の表示</h3>
+        <div class="result-demo-wrapper">
+          <div id="result-demo"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <ul>
+      <li>Author: 宮崎 雄策 (Yuusaku Miyazaki)</li>
+      <li><a href="https://github.com/sutara79/get-link-with-hatena-bookmark">view on GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
