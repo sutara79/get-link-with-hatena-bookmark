@@ -22,7 +22,7 @@ var hatena_bookmark = {
     this.option = {
       url: $('#hb-url').val(),
       title: '',
-      blank: ($('#hb-opt-blank').prop('checked')) ? ' target="_blank"' : '',
+      blank: ($('#hb-opt-blank').prop('checked')) ? ' target="_blank" rel="noopener"' : '',
       users: ($('#hb-opt-users').prop('checked')) ? true : false,
       alt: $('#hb-opt-alt').val()
     };
