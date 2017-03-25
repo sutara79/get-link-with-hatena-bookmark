@@ -1,3 +1,6 @@
+/**
+ * はてなブックマーク関連の処理をまとめたオブジェクト
+ */
 var hatena_bookmark = {
   /**
    * はじめに実行する処理
@@ -19,12 +22,31 @@ var hatena_bookmark = {
    * オプションを設定する。
    */
   initOption: function() {
+    // URLをサニタイズ (パーセントエンコーディングでURLエンコード)
+    var url = $('#hb-url').val().replace(/["<>]/g, function(match) {
+      return {
+        '"': '%22',
+        '<': '%3C',
+        '>': '%3E'
+      }[match]
+    });
+
+    // alt属性値をサニタイズ (文字実体参照でHTMLエスケープ)
+    var alt = $('#hb-opt-alt').val().replace(/["<>]/g, function(match) {
+      return {
+        '"': '&quot;',
+        '<': '&lt;',
+        '>': '&gt;'
+      }[match]
+    });
+
+    // オプション値を決定
     this.option = {
-      url: $('#hb-url').val(),
+      url: url,
       title: '',
       blank: ($('#hb-opt-blank').prop('checked')) ? ' target="_blank" rel="noopener"' : '',
       users: ($('#hb-opt-users').prop('checked')) ? true : false,
-      alt: $('#hb-opt-alt').val()
+      alt: alt
     };
   },
   /**
