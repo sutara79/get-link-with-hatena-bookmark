@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="URLを入力するだけで、ページのタイトルをリンクテキストとした、はてブ数付きのリンクをHTMLとMarkdown形式で取得でき、ブログなどでそのまま使えます。">
 <title>はてなブックマーク数表示付きリンクを取得する</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
@@ -21,9 +22,11 @@
     <div class="row">
       <div class="col-md-6">
         <div class="input-container">
-          <p>リンクを取得したいページのURLを入力してください。</p>
           <form id="user-input">
-            <p><input id="hb-url" class="main-io js-input" type="url" value="http://b.hatena.ne.jp/"></p>
+            <p>
+              <label for="hb-url">URLを入力</label>
+              <input id="hb-url" class="main-io js-input" type="url" value="http://b.hatena.ne.jp/">
+            </p>
             <p><button type="submit" class="btn btn-primary hb-execute">リンクを取得する</button></p>
             <div class="input-option">
               <h4>オプション</h4>

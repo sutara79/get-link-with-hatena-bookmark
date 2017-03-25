@@ -9,6 +9,7 @@ header {
 }
 .page-title {
   font-size: 150%;
+  margin: 0;
 }
 /**
  * 本文
@@ -19,7 +20,7 @@ header {
 .input-option {
   padding: 1em 0;
 }
-.input-option label {
+label { /* Bootstrap 打ち消し */
   font-weight: normal;
 }
 .result-container {
