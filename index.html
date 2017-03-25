@@ -18,49 +18,52 @@
 </header>
 <main role="main">
   <div class="container">
-    <div class="input-container">
-      <p>リンクを取得したいページのURLを入力してください。</p>
-      <p><input id="hb-url" class="main-io" type="url" value="http://b.hatena.ne.jp/"></p>
-      <div class="input-option">
-        <h4>オプション</h4>
-        <ul>
-          <li>
-            <input id="hb-opt-blank" type="checkbox" checked="checked">
-            <label for="hb-opt-blank">
-              リンクを新しいタブで開く (<code>target="_blank"</code>を付与。HTML形式のみ有効)
-            </label>
-          </li>
-          <li>
-            <input id="hb-opt-users" type="checkbox" checked="checked">
-            <label for="hb-opt-users">
-              はてなブックマーク数を表示する
-            </label>
-          </li>
-          <li>
-            <label for="hb-opt-alt">はてなブックマーク数表示の画像のalt属性</label><br>
-            <input id="hb-opt-alt" type="text" size="40" value="hatena bookmark">
-          </li>
-        </ul>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-container">
+          <p>リンクを取得したいページのURLを入力してください。</p>
+          <p><input id="hb-url" class="main-io js-input" type="url" value="http://b.hatena.ne.jp/"></p>
+          <p><button class="btn btn-primary hb-execute">リンクを取得する</button></p>
+          <div class="input-option">
+            <h4>オプション</h4>
+            <ul>
+              <li>
+                <input id="hb-opt-blank" type="checkbox" checked="checked">
+                <label for="hb-opt-blank">
+                  リンクを新しいタブで開く (HTML形式のみ)
+                </label>
+              </li>
+              <li>
+                <input id="hb-opt-users" type="checkbox" checked="checked">
+                <label for="hb-opt-users">
+                  はてなブックマーク数を表示する
+                </label>
+              </li>
+              <li>
+                <label for="hb-opt-alt">カウント画像のalt属性</label><br>
+                <input id="hb-opt-alt" class="js-input" type="text" size="40" value="hatena bookmark">
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <p><button class="btn btn-primary hb-execute">リンクを取得する</button></p>
-    </div>
-    <div class="result-container">
-      <h2>結果表示</h2>
-      <p>
-        下記に出力されるソースコードをブログやウェブページで利用してください。
-      </p>
-      <div>
-        <h3>HTML形式</h3>
-        <textarea id="result-html" class="main-io" rows="5"></textarea>
-      </div>
-      <div>
-        <h3>Markdown形式</h3>
-        <textarea id="result-markdown" class="main-io" rows="5"></textarea>
-      </div>
-      <div>
-        <h3>実際の表示</h3>
-        <div class="result-demo-wrapper">
-          <div id="result-demo"></div>
+      <div class="col-md-6">
+        <div class="result-container">
+          <div>
+            <h3>実際の表示</h3>
+            <div class="result-demo-wrapper">
+              <div id="result-demo"></div>
+            </div>
+          </div>
+          <p>下記のソースコードをブログやウェブページで利用してください。</p>
+          <div>
+            <h3>HTML形式</h3>
+            <textarea id="result-html" class="main-io js-input" rows="5"></textarea>
+          </div>
+          <div>
+            <h3>Markdown形式</h3>
+            <textarea id="result-markdown" class="main-io js-input" rows="5"></textarea>
+          </div>
         </div>
       </div>
     </div>

@@ -87,7 +87,7 @@ $(function() {
   /**
    * 入力欄がフォーカスされたら、選択状態にする。
    */
-  $('input, textarea').on('focus', function() {
+  $('.js-input').on('focus', function() {
     $(this).select();
   });
   /**

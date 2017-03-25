@@ -14,9 +14,15 @@ $html = curl_exec($ch);
 curl_close($ch);
 
 // 正規表現で<title>の中身を取得する
-if (preg_match('/<title>(.*?)<\/title>/i', mb_convert_encoding($html, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'), $matches)) {
-  $title = $matches[1];
+if (
+    preg_match(
+        '/<title>(.*?)<\/title>/i',
+        mb_convert_encoding($html, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'),
+        $matches
+    )
+) {
+    $title = $matches[1];
 } else {
-  $title = $url;
+    $title = $url;
 }
 echo $title;

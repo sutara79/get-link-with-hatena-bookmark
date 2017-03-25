@@ -2,9 +2,10 @@
  * ヘッダー
  */
 header {
-  background-color: #def;
-  padding: 2em 0;
+  background-color: #555;
+  color: #fff;
   margin-bottom: 2em;
+  padding: 2em 0;
 }
 .page-title {
   font-size: 150%;
@@ -13,10 +14,7 @@ header {
  * 本文
  */
 .input-container {
-  margin-bottom: 5em;
-}
-.input-container .main-io {
-  border: 2px solid #999;
+  margin-bottom: 3em;
 }
 .input-option {
   padding: 1em 0;
@@ -26,22 +24,23 @@ header {
 }
 .result-container {
   background-color: #eee;
-  padding: 1em;
   margin-bottom: 3em;
+  padding: 1em;
 }
 .result-demo-wrapper {
   background-color: #fff;
-  border: 2px solid #999;
+  border: 1px solid #999;
   padding: 1em;
 }
 .main-io {
+  border: 2px solid #999;
   width: 100%;
 }
 /**
  * フッター
  */
 footer {
-  background-color: #666;
+  background-color: #555;
   color: #fff;
   padding: 1em 0;
 }
