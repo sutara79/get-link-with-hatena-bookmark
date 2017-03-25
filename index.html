@@ -22,29 +22,31 @@
       <div class="col-md-6">
         <div class="input-container">
           <p>リンクを取得したいページのURLを入力してください。</p>
-          <p><input id="hb-url" class="main-io js-input" type="url" value="http://b.hatena.ne.jp/"></p>
-          <p><button class="btn btn-primary hb-execute">リンクを取得する</button></p>
-          <div class="input-option">
-            <h4>オプション</h4>
-            <ul>
-              <li>
-                <input id="hb-opt-blank" type="checkbox" checked="checked">
-                <label for="hb-opt-blank">
-                  リンクを新しいタブで開く (HTML形式のみ)
-                </label>
-              </li>
-              <li>
-                <input id="hb-opt-users" type="checkbox" checked="checked">
-                <label for="hb-opt-users">
-                  はてなブックマーク数を表示する
-                </label>
-              </li>
-              <li>
-                <label for="hb-opt-alt">カウント画像のalt属性</label><br>
-                <input id="hb-opt-alt" class="js-input" type="text" size="40" value="hatena bookmark">
-              </li>
-            </ul>
-          </div>
+          <form id="user-input">
+            <p><input id="hb-url" class="main-io js-input" type="url" value="http://b.hatena.ne.jp/"></p>
+            <p><button type="submit" class="btn btn-primary hb-execute">リンクを取得する</button></p>
+            <div class="input-option">
+              <h4>オプション</h4>
+              <ul>
+                <li>
+                  <input id="hb-opt-blank" type="checkbox" checked="checked">
+                  <label for="hb-opt-blank">
+                    リンクを新しいタブで開く (HTML形式のみ)
+                  </label>
+                </li>
+                <li>
+                  <input id="hb-opt-users" type="checkbox" checked="checked">
+                  <label for="hb-opt-users">
+                    はてなブックマーク数を表示する
+                  </label>
+                </li>
+                <li>
+                  <label for="hb-opt-alt">カウント画像のalt属性</label><br>
+                  <input id="hb-opt-alt" class="js-input" type="text" size="40" value="hatena bookmark">
+                </li>
+              </ul>
+            </div>
+          </form>
         </div>
       </div>
       <div class="col-md-6">

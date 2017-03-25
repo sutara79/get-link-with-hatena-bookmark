@@ -93,7 +93,8 @@ $(function() {
   /**
    * ボタンをクリックしたらリンクを取得する。
    */
-  $('.hb-execute').on('click', function() {
+  $('#user-input').on('submit', function(ev) {
+    ev.preventDefault(); // 必須。これがないとページが延々とリロードされる。
     hatena_bookmark.init();
-  }).trigger('click');
+  }).trigger('submit');
 });
