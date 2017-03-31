@@ -1,7 +1,7 @@
 /**
  * はてなブックマーク関連の処理をまとめたオブジェクト
  */
-var hatena_bookmark = {
+var hatebu = {
   /**
    * はじめに実行する処理
    */
@@ -102,21 +102,69 @@ var hatena_bookmark = {
     };
   }
 };
+
 /**
- * ページ読み込み後に実行する。
+ * localStorage関連の処理
  */
-$(function() {
+var lsControl = {
   /**
-   * 入力欄がフォーカスされたら、選択状態にする。
+   * ユーザーの設定値をlocalStorageに保存する
    */
+  saveStorage: function() {
+    var userSettings = {
+      // URL入力欄
+      hbUrl: $('#hb-url').val(),
+
+      // 新しいタブで開くか
+      hbOptBlank: $('#hb-opt-blank').prop('checked'),
+
+      // ブックマーク数を表示するか
+      hbOptUsers: $('#hb-opt-users').prop('checked'),
+
+      // 画像のalt属性
+      hbOptAlt: $('#hb-opt-alt').val()
+    };
+    localStorage.setItem('sutaraSample2HatebuUserSettings', JSON.stringify(userSettings));
+  },
+  /**
+   * localStorageの値を元に、ユーザーの設定値を復元する
+   */
+  restoreStorage: function() {
+    var userSettings = JSON.parse(localStorage.getItem('sutaraSample2HatebuUserSettings'));
+
+    // localStorageに適切な値がなければ終了
+    if (!userSettings || typeof userSettings != 'object') {
+      return;
+    }
+
+    // URL入力欄
+    $('#hb-url').val(userSettings.hbUrl);
+
+    // 新しいタブで開くか
+    $('#hb-opt-blank').prop('checked', userSettings.hbOptBlank);
+
+    // ブックマーク数を表示するか
+    $('#hb-opt-users').prop('checked', userSettings.hbOptUsers);
+
+    // 画像のalt属性
+    $('#hb-opt-alt').val(userSettings.hbOptAlt);
+  }
+};
+
+// ページ読み込み後に実行する。
+$(function() {
+  // ユーザーの入力値を復元
+  lsControl.restoreStorage();
+
+  // 入力欄がフォーカスされたら、選択状態にする。
   $('.js-input').on('focus', function() {
     $(this).select();
   });
-  /**
-   * ボタンをクリックしたらリンクを取得する。
-   */
+
+  // ボタンをクリックしたらリンクを取得する。
   $('#user-input').on('submit', function(ev) {
     ev.preventDefault(); // 必須。これがないとページが延々とリロードされる。
-    hatena_bookmark.init();
+    lsControl.saveStorage(); // 入力値を保存
+    hatebu.init(); // はてブ数取得処理
   }).trigger('submit');
 });
