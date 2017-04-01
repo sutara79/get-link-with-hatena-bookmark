@@ -10,6 +10,7 @@ curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 curl_setopt($ch, CURLOPT_USERAGENT, 'Dummy'); // はてなの503エラー対策 参照: http://q.hatena.ne.jp/1451205850
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // SSL証明回避 参照: http://mio-koduki.blogspot.jp/2012/08/php-curlsslhttpsca.html
 $html = curl_exec($ch);
 curl_close($ch);
 
