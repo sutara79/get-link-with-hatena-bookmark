@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" itemscope itemtype="http://schema.org/WebApplication">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="URLを入力するだけで、ページのタイトルをリンクテキストとした、はてブ数付きのリンクをHTMLとMarkdown形式で取得でき、ブログなどでそのまま使えます。">
-<title>はてなブックマーク数表示付きリンクを取得する</title>
+<meta name="description" itemprop="description" content="URLを入力するだけで、ページのタイトルをリンクテキストとした、はてブ数付きのリンクをHTMLとMarkdown形式で取得でき、ブログなどでそのまま使えます。">
+<title itemprop="name">はてなブックマーク数表示付きリンクを取得する</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -25,7 +25,7 @@
           <form id="user-input">
             <p>
               <label for="hb-url">URLを入力</label>
-              <input id="hb-url" class="main-io js-input" type="url" value="http://b.hatena.ne.jp/">
+              <input id="hb-url" class="main-io js-input" type="url" value="http://b.hatena.ne.jp/" autofocus>
             </p>
             <p><button type="submit" class="btn btn-primary hb-execute">リンクを取得する</button></p>
             <div class="input-option">
@@ -77,8 +77,28 @@
 <footer>
   <div class="container">
     <ul>
-      <li><a href="http://sutara79.hatenablog.com/entry/2016/10/23/142517">Author: 宮崎 雄策 (Yuusaku Miyazaki)</a></li>
-      <li><a href="https://github.com/sutara79/get-link-with-hatena-bookmark">view on GitHub</a></li>
+      <li>
+        公開: <time itemprop="dateCreated" datetime="2016-10-23">2016-10-23</time>
+      </li>
+      <li>
+        更新: <time itemprop="dateModified" datetime="2017-04-14">2017-04-14</time>
+      </li>
+      <li>
+        対応ブラウザ: <span itemprop="browserRequirements">HTML5に対応しているもの (Chrome, Safari, Firefox, IE11, Edgeなど)</span>
+      </li>
+      <li>
+        <a itemprop="releaseNotes" href="https://github.com/sutara79/get-link-with-hatena-bookmark">
+          view on GitHub
+        </a>
+      </li>
+      <li itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a itemprop="url" href="http://sutara79.hatenablog.com/entry/2016/10/23/142517">
+          作者:
+          <span itemprop="alternateName">宮崎 雄策</span>
+          (<span itemprop="givenName">Yuusaku</span>
+          <span itemprop="familyName">Miyazaki</span>)
+        </a>
+      </li>
     </ul>
   </div>
 </footer>
