@@ -5,9 +5,9 @@ var hatebu = {
   /**
    * はじめに実行する処理
    */
-  init: function() {
+  init: function(isFirst) {
     this.clearResults();
-    this.initOption();
+    this.initOption(isFirst);
     this.getTitle(this.option.url);
   },
   /**
@@ -21,7 +21,7 @@ var hatebu = {
   /**
    * オプションを設定する。
    */
-  initOption: function() {
+  initOption: function(isFirst) {
     // URLをサニタイズ (パーセントエンコーディングでURLエンコード)
     var url = $('#hb-url').val().replace(/["<>]/g, function(match) {
       return {
@@ -46,7 +46,8 @@ var hatebu = {
       title: '',
       blank: ($('#hb-opt-blank').prop('checked')) ? ' target="_blank" rel="noopener"' : '',
       users: ($('#hb-opt-users').prop('checked')) ? true : false,
-      alt: alt
+      alt: alt,
+      isFirst: isFirst
     };
   },
   /**
@@ -61,6 +62,10 @@ var hatebu = {
       function(title) {
         self.option.title = title;
         self.showResult();
+        console.log('focus!');
+        if (!self.option.isFirst) {
+          $('#result-html').focus();
+        }
       }
     );
   },
@@ -166,5 +171,6 @@ $(function() {
     ev.preventDefault(); // 必須。これがないとページが延々とリロードされる。
     lsControl.saveStorage(); // 入力値を保存
     hatebu.init(); // はてブ数取得処理
-  }).trigger('submit');
+  });
+  hatebu.init(true); // 読み込み後、1回だけ実行
 });
