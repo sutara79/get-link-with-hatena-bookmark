@@ -73,17 +73,17 @@ var hatebu = {
    * 結果を表示する
    */
   showResult: function() {
-    var obj_page = this.getPage(this.option.url, this.option.title, this.option.blank);
-    var obj_hatena = this.getHatena(this.option.url, this.option.title, this.option.blank, this.option.alt);
-    var str_html = obj_page.html;
-    var str_markdown = obj_page.markdown;
+    var objPage = this.getPage(this.option.url, this.option.title, this.option.blank);
+    var objHatena = this.getHatena(this.option.url, this.option.title, this.option.blank, this.option.alt);
+    var strHtml = objPage.html;
+    var strMarkdown = objPage.markdown;
     if (this.option.users) {
-      str_html += ' ' + obj_hatena.html;
-      str_markdown += ' ' + obj_hatena.markdown;
+      strHtml += ' ' + objHatena.html;
+      strMarkdown += ' ' + objHatena.markdown;
     }
-    $('#result-html').val(str_html);
-    $('#result-markdown').val(str_markdown);
-    $('#result-demo').html(str_html);
+    $('#result-html').val(strHtml);
+    $('#result-markdown').val(strMarkdown);
+    $('#result-demo').html(strHtml);
   },
   /**
    * ページ自体へのリンクを取得する。
@@ -98,12 +98,12 @@ var hatebu = {
    * はてなブックマークへのリンクを取得する。
    */
   getHatena: function(url, title, blank, alt) {
-    var url_encoded = url.replace(/#/g, '%23');
-    var url_b_img = 'http://b.hatena.ne.jp/entry/image/' + url_encoded;
-    var url_b_page = 'http://b.hatena.ne.jp/entry/' + url_encoded;
+    var urlPageEncoded = url.replace(/#/g, '%23');
+    var urlHatebuImg = 'http://b.hatena.ne.jp/entry/image/' + urlPageEncoded;
+    var urlHatebuPage = 'http://b.hatena.ne.jp/entry/' + urlPageEncoded;
     return {
-      html: '<a href="' + url_b_page + '"' + blank + '><img src="' + url_b_img + '" alt="' + alt + '"></a>',
-      markdown: '[![' + alt + '](' + url_b_img + ')](' + url_b_page + ')'
+      html: '<a href="' + urlHatebuPage + '"' + blank + '><img src="' + urlHatebuImg + '" alt="' + alt + '"></a>',
+      markdown: '[![' + alt + '](' + urlHatebuImg + ')](' + urlHatebuPage + ')'
     };
   }
 };
