@@ -2,7 +2,7 @@
 URLを入力するだけでリンクを取得できます。
 
 ## Demo
-http://usamimi.info/~sutara/sample2/get-link-with-hatena-bookmark/
+https://sutara79-php.herokuapp.com/demo/get-link-with-hatena-bookmark/
 
 ## 特徴
 - リンク文字列としてそのページのタイトルタグを表示します。  

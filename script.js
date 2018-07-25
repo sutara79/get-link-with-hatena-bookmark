@@ -99,8 +99,8 @@ var hatebu = {
    */
   getHatena: function(url, title, blank, alt) {
     var urlPageEncoded = url.replace(/#/g, '%23');
-    var urlHatebuImg = 'http://b.hatena.ne.jp/entry/image/' + urlPageEncoded;
-    var urlHatebuPage = 'http://b.hatena.ne.jp/entry/' + urlPageEncoded;
+    var urlHatebuImg = 'https://b.hatena.ne.jp/entry/image/' + urlPageEncoded;
+    var urlHatebuPage = 'https://b.hatena.ne.jp/entry/' + urlPageEncoded;
     return {
       html: '<a href="' + urlHatebuPage + '"' + blank + '><img src="' + urlHatebuImg + '" alt="' + alt + '"></a>',
       markdown: '[![' + alt + '](' + urlHatebuImg + ')](' + urlHatebuPage + ')'
